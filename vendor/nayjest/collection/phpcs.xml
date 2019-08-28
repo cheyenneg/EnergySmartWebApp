@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<ruleset name="Nayjest\Collection">
+    <description>The coding standard for Nayjest\Collection package</description>
+    <file>./src</file>
+    <rule ref="PSR1"/>
+    <rule ref="PSR2"/>
+</ruleset>

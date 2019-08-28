@@ -1,0 +1,72 @@
+{
+  "name": "view-components/view-components",
+  "description": "Flexible Framework-Agnostic UI for Enterprise Web Applications",
+  "keywords": [
+    "html",
+    "view",
+    "widgets",
+    "presenter",
+    "rendering"
+  ],
+  "homepage": "https://github.com/view-components/view-components",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Vitalii [Nayjest] Stepanenko",
+      "email": "mail@vitaliy.in",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^5.5||^7",
+    "nayjest/manipulator": "^3.1.0",
+    "nayjest/tree": "^3",
+    "nayjest/collection": "^2.3",
+    "danielstjules/stringy": "^1.9|~2.2.0",
+    "container-interop/container-interop": "^1.1"
+  },
+  "require-dev": {
+    "ext-curl": "*",
+    "view-components/testing-helpers": "^2.0.1",
+    "squizlabs/php_codesniffer": "~2.3"
+  },
+  "provide": {
+    "container-interop/container-interop-implementation": "^1.1"
+  },
+  "suggest": {
+    "league/uri": "Required by Pagination component",
+    "symfony/var-dumper": "Required by SymfonyVarDump component"
+  },
+  "autoload": {
+    "psr-4": {
+      "ViewComponents\\ViewComponents\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "ViewComponents\\ViewComponents\\Test\\": "tests/phpunit",
+      "ViewComponents\\ViewComponents\\WebApp\\": "tests/webapp"
+    }
+  },
+  "scripts": {
+    "post-create-project-cmd": [
+      "ViewComponents\\ViewComponents\\Installer::runFromComposer"
+    ],
+    "post-update-cmd": [
+      "ViewComponents\\ViewComponents\\Installer::runFromComposer"
+    ],
+    "post-install-cmd": [
+      "ViewComponents\\ViewComponents\\Installer::runFromComposer"
+    ],
+    "serve": "php vendor/view-components/testing-helpers/serve",
+    "test": "php vendor/phpunit/phpunit/phpunit",
+    "cs": "php vendor/squizlabs/php_codesniffer/scripts/phpcs --standard=psr2 src/"
+  },
+  "support": {
+    "email": "mail@vitaliy.in",
+    "source": "https://github.com/view-components/view-components",
+    "issues": "https://github.com/view-components/view-components/issues"
+  },
+  "minimum-stability": "stable"
+}

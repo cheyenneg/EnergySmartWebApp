@@ -1,0 +1,53 @@
+{
+  "name": "view-components/grids",
+  "description": "Flexible Framework-agnostic Data Grids for PHP",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Vitalii [Nayjest] Stepanenko",
+      "email": "mail@vitaliy.in",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^5.5||^7",
+    "view-components/view-components": "^0.25||^0.26.6",
+    "nayjest/tree": "^3"
+  },
+  "require-dev": {
+    "view-components/testing-helpers": "^2.0.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "ViewComponents\\Grids\\": "src/"
+    },
+    "files": [
+      "src/bootstrap.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "ViewComponents\\Grids\\Test\\": "tests/phpunit",
+      "ViewComponents\\Grids\\WebApp\\": "tests/webapp"
+    }
+  },
+  "scripts": {
+    "post-create-project-cmd": [
+      "ViewComponents\\Grids\\Installer::runFromComposer"
+    ],
+    "post-update-cmd": [
+      "ViewComponents\\Grids\\Installer::runFromComposer"
+    ],
+    "post-install-cmd": [
+      "ViewComponents\\Grids\\Installer::runFromComposer"
+    ],
+    "serve": "php vendor/view-components/testing-helpers/serve",
+    "test": "php vendor/phpunit/phpunit/phpunit",
+    "cs": "php vendor/squizlabs/php_codesniffer/scripts/phpcs --standard=psr2 src/"
+  },
+  "support": {
+    "email": "mail@vitaliy.in"
+  },
+  "minimum-stability": "stable"
+}
